@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ServicioController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -17,3 +17,7 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get("servicio/get",[ServicioController::class, "getServicio"]);
+Route::post("servicio/post",[ServicioController::class, "crearServicio"]);
+Route::post("servicio/delete", [ServicioController::class,"eliminarServicio"]);
+Route::post("servicio/actualizar", [ServicioController::class,"actualizarServicio"]);
